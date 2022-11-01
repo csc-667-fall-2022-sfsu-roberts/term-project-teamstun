@@ -1,8 +1,23 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.header {
+  grid-area: header;
+  background-color: rgb(141, 165, 226);
+}
+
+.main {
+  grid-area: main;
+  background-color: rgb(235, 158, 223);
+}
+
+.chat {
+  grid-area: chat;
+  background-color: rgb(252, 203, 180);
+}
+
+.footer {
+  grid-area: footer;
+  background-color: rgb(168, 230, 177);
 }

@@ -8,15 +8,28 @@ if(process.env.NODE_ENV === 'development') {
   require("dotenv").config();
 }
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var testsRouter = require('./routes/tests');
+// var handlebars = require('express-handlebars');
+var indexRouter = require('./routes/pages/index');
+var gamesRouter = require('./routes/pages/games');
+var lobbyRouter = require('./routes/pages/lobby');
+var testsRouter = require('./routes/pages/tests');
+var hbs = require('hbs');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+hbs.registerPartials(path.join(__dirname, 'views/partials'));
+app.set('view options', { layout: 'public/landing' });
+
+
+// app.engine('hbs', handlebars({
+//   layoutsDir:  path.join(__dirname, 'views/layouts'),
+//   partialsDir: path.join(__dirname, 'views/partials'),
+//   extname: 'hbs', 
+//   defaultLayout: 'layout'
+// }));
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -25,7 +38,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/games', gamesRouter);
+app.use('/lobby', lobbyRouter);
 app.use('/tests', testsRouter);
 
 // catch 404 and forward to error handler
