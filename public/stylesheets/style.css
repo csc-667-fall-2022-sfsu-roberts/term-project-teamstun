@@ -4,7 +4,7 @@ body {
 
 .header {
   grid-area: header;
-  background-color: rgb(141, 165, 226);
+  background-color: #181818;
 }
 
 .main {
@@ -20,4 +20,8 @@ body {
 .footer {
   grid-area: footer;
   background-color: rgb(168, 230, 177);
+}
+
+img[alt="stun-logo"] {
+  padding-top: 15px;
 }
