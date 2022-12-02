@@ -2,10 +2,10 @@ var express = require("express");
 var router = express.Router();
 
 router.get("/", function (request, response) {
-  response.render("protected/lobby", {
-    title: "Lobby",
-    layout: "protected/home",
+  response.render("public/login", {
+    title: "Log in",
+    layout: "public/landing",
   });
 });
 
-module.exports = router;
+  module.exports = router;

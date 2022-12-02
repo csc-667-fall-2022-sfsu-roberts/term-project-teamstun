@@ -1,61 +1,66 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+var createError = require("http-errors");
+var express = require("express");
+var path = require("path");
+var cookieParser = require("cookie-parser");
+var logger = require("morgan");
 
-if(process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === "development") {
   require("dotenv").config();
 }
 
 // var handlebars = require('express-handlebars');
-var indexRouter = require('./routes/pages/index');
-var gamesRouter = require('./routes/pages/games');
-var lobbyRouter = require('./routes/pages/lobby');
-var testsRouter = require('./routes/pages/tests');
-var hbs = require('hbs');
+var indexRouter = require("./routes/pages/index");
+var signupRouter = require("./routes/pages/signup");
+var loginRouter = require("./routes/pages/login");
+var gamesRouter = require("./routes/pages/games");
+var lobbyRouter = require("./routes/pages/lobby");
+var waitingroomRouter = require("./routes/pages/waitingroom");
+var testsRouter = require("./routes/pages/tests");
+var hbs = require("hbs");
 
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
-hbs.registerPartials(path.join(__dirname, 'views/partials'));
-app.set('view options', { layout: 'public/landing' });
-
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "hbs");
+hbs.registerPartials(path.join(__dirname, "views/partials"));
+app.set("view options", { layout: "public/landing" });
 
 // app.engine('hbs', handlebars({
 //   layoutsDir:  path.join(__dirname, 'views/layouts'),
 //   partialsDir: path.join(__dirname, 'views/partials'),
-//   extname: 'hbs', 
+//   extname: 'hbs',
 //   defaultLayout: 'layout'
 // }));
 
-app.use(logger('dev'));
+app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
-app.use('/', indexRouter);
-app.use('/games', gamesRouter);
-app.use('/lobby', lobbyRouter);
-app.use('/tests', testsRouter);
+app.use("/", indexRouter);
+app.use("/signup", signupRouter);
+app.use("/login", loginRouter);
+app.use("/games", gamesRouter);
+app.use("/protected/lobby", lobbyRouter);
+app.use("/protected/waitingroom", waitingroomRouter);
+app.use("/tests", testsRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.locals.error = req.app.get("env") === "development" ? err : {};
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render("error");
 });
 
 module.exports = app;

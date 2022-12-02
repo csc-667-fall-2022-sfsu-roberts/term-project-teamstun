@@ -33,6 +33,7 @@ footer {
   /* background-color: rgb(168, 230, 177); */
 }
 
+/* nav bar */
 .nav a:hover {
   text-decoration: underline;
   color: black;
@@ -70,7 +71,9 @@ footer {
 .nav-right {
   float: right;
 }
+/* end nav bar */
 
+/* index page */
 .uno-title {
   text-align: center;
   padding-top: 100px;
@@ -100,7 +103,9 @@ form .lobby-btn input {
 form .lobby-btn input:hover {
   background: linear-gradient(-135deg, #de2929, #fff06f);
 }
+/* end index page*/
 
+/* register page*/
 form .user-details .input-box {
   margin-bottom: 10px;
   width: calc(100% / 2 - 20px);
@@ -176,8 +181,9 @@ form .register-btn input {
 form .register-btn input:hover {
   background: linear-gradient(-135deg, #de2929, #fff06f);
 }
+/* end register page */
 
-/* dfasdfasdfasdfasdfasdfadsfasdf */
+/* sign up page */
 .content form .user-details {
   display: block;
   text-align: center;
@@ -240,3 +246,6 @@ form .signin-btn input:hover {
 #notreg p {
   text-align: center;
 }
+/* end sign up page */
+
+/* lobby page */

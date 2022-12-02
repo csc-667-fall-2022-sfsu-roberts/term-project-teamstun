@@ -16,25 +16,4 @@ router.get("/index", function (request, response) {
   });
 });
 
-router.get("/login", function (request, response) {
-  response.render("public/login", {
-    title: "Log in",
-    layout: "public/landing",
-  });
-});
-
-router.get("/lobby", function (request, response) {
-  response.render("public/lobby", {
-    title: "Lobby",
-    layout: "public/landing",
-  });
-});
-
-router.get("/signup", function (request, response) {
-  response.render("public/signup", {
-    title: "Sign up",
-    layout: "public/landing",
-  });
-});
-
 module.exports = router;
