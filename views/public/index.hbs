@@ -1,3 +1,11 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<ul>
+    <li>
+        <a href="/auth/login">Log In</a>
+    </li>
+</ul>
+
+{{#if username}}
+<h3>Welcome {{ username }}</h3>
+<h3>{{ sessionID }}</h3>
+{{/if}}
 

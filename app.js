@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const sessionInstance = require("./app-config/session");
+const protect = require("./app-config/protect");
 
 if(process.env.NODE_ENV === 'development') {
   require("dotenv").config();
@@ -13,6 +15,7 @@ var indexRouter = require('./routes/pages/index');
 var gamesRouter = require('./routes/pages/games');
 var lobbyRouter = require('./routes/pages/lobby');
 var testsRouter = require('./routes/pages/tests');
+var authRouter = require('./routes/pages/auth');
 var hbs = require('hbs');
 
 var app = express();
@@ -36,11 +39,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(sessionInstance);
 
 app.use('/', indexRouter);
-app.use('/games', gamesRouter);
-app.use('/lobby', lobbyRouter);
+app.use('/games', protect, gamesRouter);
+app.use('/lobby', protect, lobbyRouter);
 app.use('/tests', testsRouter);
+app.use('/auth', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
