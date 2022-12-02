@@ -1,0 +1,42 @@
+<div class="form-container">
+  <h3 class="title">Sign In</h3>
+  <hr />
+  <div class="row">
+    <form action="/signin" method="POST">
+      <div class="user-details">
+        <div class="input-box">
+
+          <span class="fields">Username*</span>
+          <input
+            type="text"
+            name="username"
+            id="user"
+            required
+            placeholder="Username"
+          />
+        </div>
+
+        <div class="input-box">
+          <span class="fields">Password*</span>
+          <input
+            type="password"
+            name="password"
+            id="pass"
+            required
+            placeholder="Enter password"
+          />
+        </div>
+
+      </div>
+      <br />
+
+      <div class="signin-btn">
+        <input type="submit" value="Sign in" />
+      </div>
+    </form>
+    <br />
+    <div id="notreg">
+      <p>Not registered? <a href="/signup">Sign up!</a></p>
+    </div>
+  </div>
+</div>

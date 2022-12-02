@@ -1,23 +1,242 @@
+/* Theme colors
+        #fff06f   yellow
+        #de2929   red
+          */
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+footer {
+  text-align: center;
+  user-select: none;
+  width: 100%;
+}
+
 .header {
   grid-area: header;
-  background-color: rgb(141, 165, 226);
+  /* background-color: rgb(141, 165, 226); */
 }
 
 .main {
   grid-area: main;
-  background-color: rgb(235, 158, 223);
+  /* background-color: rgb(235, 158, 223); */
 }
 
 .chat {
   grid-area: chat;
-  background-color: rgb(252, 203, 180);
+  /* background-color: rgb(252, 203, 180); */
 }
 
 .footer {
   grid-area: footer;
-  background-color: rgb(168, 230, 177);
+  /* background-color: rgb(168, 230, 177); */
+}
+
+.nav a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+.nav {
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.nav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.nav a.active {
+  background-color: blue;
+  color: white;
+}
+
+.nav-center a {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-right {
+  float: right;
+}
+
+.uno-title {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+form .lobby-btn {
+  height: 45px;
+  margin: 25px 0;
+  text-align: center;
+}
+
+form .lobby-btn input {
+  height: 100%;
+  width: 250px;
+  border-radius: 5px;
+  border: none;
+  color: #fff06f;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #de2929;
+}
+
+form .lobby-btn input:hover {
+  background: linear-gradient(-135deg, #de2929, #fff06f);
+}
+
+form .user-details .input-box {
+  margin-bottom: 10px;
+  width: calc(100% / 2 - 20px);
+}
+
+.user-details .input-box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 14px;
+  border-radius: 5px;
+  padding-left: 5px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: #fff06f;
+}
+
+.row form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 10px 0;
+}
+
+.content form .user-details2 {
+  display: block;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 30px 0 10px 0;
+}
+
+.form-container {
+  max-width: 400px;
+  width: 100%;
+  background-color: white;
+  padding: 25px 25px;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.title {
+  text-align: center;
+}
+
+form .register-btn {
+  height: 45px;
+  margin: 25px 0;
+  text-align: center;
+}
+
+form .register-btn input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff06f;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #de2929;
+}
+
+form .register-btn input:hover {
+  background: linear-gradient(-135deg, #de2929, #fff06f);
+}
+
+/* dfasdfasdfasdfasdfasdfadsfasdf */
+.content form .user-details {
+  display: block;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 30px 0 10px 0;
+}
+
+form .user-details2 .input-box {
+  margin-bottom: 10px;
+}
+
+.user-details2 .input-box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 14px;
+  border-radius: 5px;
+  padding-left: 5px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user-details2 .input-box input:focus,
+.user-details2 .input-box input:valid {
+  border-color: #fff06f;
+}
+
+form .input-box span.fields {
+  display: block;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+form .signin-btn {
+  height: 45px;
+  margin: 5px 0;
+  text-align: center;
+}
+
+form .signin-btn input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff06f;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #de2929;
+}
+
+form .signin-btn input:hover {
+  background: linear-gradient(-135deg, #de2929, #fff06f);
+}
+
+#notreg p {
+  text-align: center;
 }
