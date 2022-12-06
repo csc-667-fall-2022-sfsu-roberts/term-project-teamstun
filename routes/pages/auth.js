@@ -43,5 +43,10 @@ router.post("/signup", (request, response) => {
             response.redirect("/auth/signup");
         });
 });
+
+router.get("/logout", (request, response) => {
+    request.session.destroy();
+    response.redirect("/");
+});
   
 module.exports = router;
