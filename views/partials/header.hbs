@@ -1,21 +1,19 @@
-<div class="nav">
-
-  <!--Center link-->
+{{!-- <div class="nav">
   <div class="nav-center">
-    <a href="/index"><img
-        src="images/unologo.png"
-        width="120px"
-        height="110px"
+    <a href="/"><img
+        src="/images/unologo.png"
+        width="95px"
         alt="logo"
       /></a>
   </div>
 
-  <a href="#">Welcome {{signedInUser}}</a>
-  {{!  <a href ="/logout" class="logout">Logout</a> }}
-
   <div class="nav-right">
-    <a href="/protected/lobby">Lobby</a>
-    <a href="/login">Log in</a>
-    <a href="/signup">Register</a>
+    <a href="/lobby">Lobby</a>
+    <a href="/auth/login">Log in</a>
+    <a href="/auth/signup">Register</a>
   </div>
-</div>
+</div> --}}
+<a href="/"><img src="/images/unologo.png" width="95px" alt="logo"/></a>
+<a class="text-decoration-none link-dark fw-bold p-2" href="/lobby">Lobby</a>
+<a class="text-decoration-none link-dark fw-bold p-2" href="/auth/login">Log in</a>
+<a class="text-decoration-none link-dark fw-bold p-2" href="/auth/signup">Register</a>

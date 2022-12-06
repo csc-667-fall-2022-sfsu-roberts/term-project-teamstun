@@ -5,166 +5,150 @@
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
 }
 
-footer {
-  text-align: center;
-  user-select: none;
-  width: 100%;
-}
-
+/********** BEGIN LAYOUTS **********/
 .header {
   grid-area: header;
-  /* background-color: rgb(141, 165, 226); */
+  background-color: rgb(141, 165, 226);
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  min-width: 100%;
 }
 
 .main {
   grid-area: main;
-  /* background-color: rgb(235, 158, 223); */
+  background-color: rgb(250, 247, 247);
 }
 
 .chat {
   grid-area: chat;
-  /* background-color: rgb(252, 203, 180); */
+  background-color: rgb(252, 203, 180);
 }
 
 .footer {
   grid-area: footer;
-  /* background-color: rgb(168, 230, 177); */
-}
-
-/* nav bar */
-.nav a:hover {
-  text-decoration: underline;
-  color: black;
-}
-
-.nav {
-  position: relative;
-  background-color: white;
-  overflow: hidden;
-  padding: 20px;
-}
-
-.nav a {
-  float: left;
-  color: black;
+  background-color: rgb(168, 230, 177);
   text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+  user-select: none;
 }
 
-.nav a.active {
-  background-color: blue;
-  color: white;
+/* Styling for landing layout */
+.landing {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid:
+    " header "
+    " main "
+    " footer ";
+  grid-template-columns: 1fr;
+  grid-template-rows: 15% 85% 200px;
+  gap: 0px;
 }
 
-.nav-center a {
-  float: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* Styling for home layout */
+.home {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid:
+    " header header "
+    " main chat "
+    " footer footer ";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 15% 85% 200px;
+  gap: 0px;
 }
 
-.nav-right {
-  float: right;
+/* Styling for home layout */
+.game {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid:
+    " header header "
+    " main chat "
+    " footer footer ";
+  grid-template-columns: 2fr 0.75fr;
+  grid-template-rows: 15% 85% 200px;
+  gap: 0px;
 }
-/* end nav bar */
 
-/* index page */
-.uno-title {
+/* Styling for auth layout */
+.auth {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid:
+    " main "
+    " footer ";
+  grid-template-columns: 1fr;
+  grid-template-rows: 100% 200px;
+  gap: 0px;
+}
+
+/********** END LAYOUT **********/
+
+/* Index styling */
+#landing-form, #login-form, #signup-form {
   text-align: center;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  justify-content: center;
+  padding: 2rem 2rem 0rem 2rem;
+  margin: 2rem auto 0rem auto;
+  width: 45rem;
 }
 
-form .lobby-btn {
-  height: 45px;
-  margin: 25px 0;
-  text-align: center;
+#landing-form {
+  width: 45rem;
 }
 
-form .lobby-btn input {
-  height: 100%;
-  width: 250px;
+#login-form {
+  width: 22rem;
+}
+
+#signup-form {
+  width: 22rem;
+}
+
+button[id="lobby-btn"] {
   border-radius: 5px;
   border: none;
-  color: #fff06f;
-  font-size: 17px;
+  color: #fff06f !important;
+  font-size: 20px;
   font-weight: bold;
   letter-spacing: 1px;
-  cursor: pointer;
   transition: all 0.3s ease;
   background: #de2929;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
-form .lobby-btn input:hover {
+button[id="lobby-btn"]:hover {
   background: linear-gradient(-135deg, #de2929, #fff06f);
 }
-/* end index page*/
+/* End Index */
 
-/* register page*/
-form .user-details .input-box {
-  margin-bottom: 10px;
-  width: calc(100% / 2 - 20px);
-}
-
-.user-details .input-box input {
-  height: 45px;
+/* Login styling */
+input[class="input-box"] {
+  height: 40px;
   width: 100%;
   outline: none;
   font-size: 14px;
   border-radius: 5px;
-  padding-left: 5px;
+  padding-left: 10px;
   border: 1px solid #ccc;
   border-bottom-width: 2px;
   transition: all 0.3s ease;
 }
 
-.user-details .input-box input:focus,
-.user-details .input-box input:valid {
+input[class="input-box"]:focus,
+input[class="input-box"]:valid {
   border-color: #fff06f;
 }
 
-.row form .user-details {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px 0 10px 0;
-}
-
-.content form .user-details2 {
-  display: block;
-  text-align: center;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 30px 0 10px 0;
-}
-
-.form-container {
-  max-width: 400px;
-  width: 100%;
-  background-color: white;
-  padding: 25px 25px;
-  border-radius: 5px;
-  margin: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.title {
-  text-align: center;
-}
-
-form .register-btn {
-  height: 45px;
-  margin: 25px 0;
-  text-align: center;
-}
-
-form .register-btn input {
+button[id="signin-btn"] {
   height: 100%;
   width: 100%;
   border-radius: 5px;
@@ -178,74 +162,20 @@ form .register-btn input {
   background: #de2929;
 }
 
-form .register-btn input:hover {
-  background: linear-gradient(-135deg, #de2929, #fff06f);
-}
-/* end register page */
-
-/* sign up page */
-.content form .user-details {
-  display: block;
-  text-align: center;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 30px 0 10px 0;
-}
-
-form .user-details2 .input-box {
-  margin-bottom: 10px;
-}
-
-.user-details2 .input-box input {
-  height: 45px;
-  width: 100%;
-  outline: none;
-  font-size: 14px;
-  border-radius: 5px;
-  padding-left: 5px;
-  border: 1px solid #ccc;
-  border-bottom-width: 2px;
-  transition: all 0.3s ease;
-}
-
-.user-details2 .input-box input:focus,
-.user-details2 .input-box input:valid {
-  border-color: #fff06f;
-}
-
-form .input-box span.fields {
-  display: block;
-  margin-bottom: 10px;
-  text-align: left;
-}
-
-form .signin-btn {
-  height: 45px;
-  margin: 5px 0;
-  text-align: center;
-}
-
-form .signin-btn input {
-  height: 100%;
-  width: 100%;
-  border-radius: 5px;
-  border: none;
-  color: #fff06f;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background: #de2929;
-}
-
-form .signin-btn input:hover {
+button[id="signin-btn"]:hover {
   background: linear-gradient(-135deg, #de2929, #fff06f);
 }
 
 #notreg p {
   text-align: center;
 }
-/* end sign up page */
 
-/* lobby page */
+.title {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+/* End login */
+
+
+
+
