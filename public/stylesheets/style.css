@@ -92,7 +92,9 @@ body {
 /********** END LAYOUT **********/
 
 /* Index styling */
-#landing-form, #login-form, #signup-form {
+#landing-form,
+#login-form,
+#signup-form {
   text-align: center;
   justify-content: center;
   padding: 2rem 2rem 0rem 2rem;
@@ -104,7 +106,8 @@ body {
   width: 45rem;
 }
 
-#login-form, #signup-form {
+#login-form,
+#signup-form {
   width: 22rem;
 }
 
@@ -172,8 +175,101 @@ button[id="signin-btn"]:hover {
 }
 /* End login */
 
+/* Signup styling */
+.error-message {
+  color: red;
+  font-weight: 500;
+}
+/* End signup */
 
+/* Lobby styling */
 
+.chat {
+  border: 2px solid red;
+  height: 80%;
+  overflow: hidden;
+  overflow-y: auto;
+}
 
+#create-game {
+  height: 40px;
+  width: 30%;
+  border-radius: 5px;
+  border: none;
+  color: #fff06f;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #de2929;
+  padding-bottom: 1rem;
+}
 
+.create-game-container {
+  text-align: center;
+}
 
+.grid-open-game-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 10px;
+}
+
+#title {
+  width: 30%;
+  height: 40px;
+  outline: none;
+  font-size: 14px;
+  border-radius: 5px;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+#title:focus {
+  border-color: #fff06f;
+}
+
+.break {
+  width: 75%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  padding: 16px;
+  height: 550px;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.join-btn {
+  height: 30px;
+  width: 70%;
+  border-radius: 5px;
+  border: none;
+  color: #fff06f;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #de2929;
+}
+
+.gametitles {
+  width: 90%;
+  border: 2px solid #fff06f;
+  text-align: center;
+  color: #de2929;
+  font-weight: bold;
+}
