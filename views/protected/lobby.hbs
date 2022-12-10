@@ -22,7 +22,7 @@
         <li>
           <div class="grid-open-game-container">
           <span class="gametitles"> {{this.title}}</span>
-          <form action="/games/{{this.id}}" method="GET" target="_blank">
+          <form action="/games/{{this.id}}/join" method="POST" target="_blank">
             <button
               type="submit"
               class="join-btn"
@@ -34,7 +34,6 @@
         </li>
       {{/each}}
     </ul>
-
   </div>
 
 <div class="column">
@@ -59,7 +58,5 @@
       {{/each}}
     </ul>
   </div>
-
-
 </div>
 </div>
