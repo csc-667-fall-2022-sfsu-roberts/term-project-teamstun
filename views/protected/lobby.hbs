@@ -34,6 +34,7 @@
         </li>
       {{/each}}
     </ul>
+
   </div>
 
 <div class="column">
@@ -44,16 +45,13 @@
         <li>{{!-- <a href="/games/{{this.id}}" target="_blank">{{this.title}}</a> --}}
         <div class="grid-open-game-container">
         <span class="gametitles">{{this.title}}</span>
-        <form action="/games/{{this.id}}" method="GET" target="_blank">
+        <a href="/games/{{this.id}}" target="_blank">
             <button
-              type="submit"
               class="join-btn"
               class="btn btn-primary"
-              value="join-game"
             >JOIN GAME</button>
+            </a>
             </div>
-            {{!-- </div> --}}
-          </form>
         </li>
       {{/each}}
     </ul>
