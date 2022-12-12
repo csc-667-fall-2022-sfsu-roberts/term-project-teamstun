@@ -3,30 +3,32 @@ const sessionMiddleware = require("../app-config/session");
 const Server = socketIO.Server;
 
 const init = (httpServer, app) => {
-    const io = new Server(httpServer);
+  const io = new Server(httpServer);
 
-    const wrap = middleware => (socket, next) =>
-        middleware(socket.request, {}, next);
-    io.use(wrap(sessionMiddleware));
+  const wrap = (middleware) => (socket, next) =>
+    middleware(socket.request, {}, next);
+  io.use(wrap(sessionMiddleware));
 
-    io.use((socket, next) => {
-        const session = socket.request.session;
+  io.use((socket, next) => {
+    const session = socket.request.session;
 
-        if (session && session.authenticated) {
-            next();
-        }else {
-            next(new Error("unauthorized"));
-        }
-    });
+    if (session && session.authenticated) {
+      next();
+    } else {
+      next(new Error("unauthorized"));
+    }
+  });
 
-    io.on("connection", (socket) => {
-        console.log({ 
+  io.on("connection", (socket) => {
+    const { userId } = socket.request.session;
+    socket.join(userId);
+    /*         console.log({ 
             message: "Connection happened",
             session: socket.request.session,
-        });
-    });
+        }); */
+  });
 
-    app.io = io;
+  app.io = io;
 };
 
 module.exports = init;
