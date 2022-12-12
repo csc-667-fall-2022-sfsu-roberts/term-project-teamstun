@@ -20,7 +20,11 @@ router.post("/login", (request, response) => {
     })
     .catch((error) => {
       console.log({ error });
-      response.redirect("/auth/login");
+      response.render("public/login", {
+        title: "Log In",
+        layout: "public/auth",
+        error: "Username/Password is incorrect",
+      });
     });
 });
 
